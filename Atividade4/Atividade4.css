@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#header {
+    background-color: #002d2b;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #ffffffff;
+    width: 100%;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: Cambria, serif;
+}
+
+#page {
+    margin-top: 5px;
+    padding: 5px;
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+}
+
+.item_navbar {
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 2px solid #ffffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: none;
+    text-align: center;
+    width: 100%;
+}
+
+#primeira-parte {
+    display: flex;
+    width: 100%;
+
+}
+
+#sidebar {
+    width: 160px;
+    float: left;
+    margin-right: 15px;
+}
+
+#content-top {
+    padding: 5px;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+
+.headliner {
+    display: flex;
+    width: 80%;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    max-height: 400px;
+}
+
+.headliner-content {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+}
+
+.headliner-title {
+    font-family: Arial, sans-serif;
+    color: #000000;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+
+.headliner-text {
+    font-size: 20px;
+}
+
+.post-right {
+    width: 200px;
+    padding: 10px;
+    margin-left: 10px;
+    text-align: right;
+    border: 1px solid rgb(167, 163, 163);
+    border-radius: 5px;
+}
+
+.post-content-right {
+    display: flex;
+    flex-direction: column;
+    margin-right: 3px;
+}
+
+#text-right {
+    margin-bottom: 10px;
+}
+
+
+#segunda-parte {
+    display: flex;
+    gap: 15px;
+}
+
+.post {
+    text-align: left;
+    display: flex;
+    padding: 5px;
+    border: 1px solid rgb(167, 163, 163);
+    border-radius: 5px;
+    width: auto;
+}
+
+.post-img {
+    margin-right: 10px;
+}
+
+.post-title {
+    font-family: Arial, sans-serif;
+    color: #881e0c;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    padding: 2px;
+
+}
+
+.post-text {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-left: 5px;
+}
+
+.post-content {
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 2px;
+}
