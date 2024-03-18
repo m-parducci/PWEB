@@ -1,0 +1,72 @@
+#quadrado {
+    height: 500px;
+    width: 500px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+    #quadrado {
+        background-color: #58ba02;
+    }
+
+    h2::before {
+        content: "VERDE";
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    #quadrado {
+        background-color: rgb(193, 144, 47);
+    }
+    h2::before {
+        content: "AMARELO QUEIMADO";
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #quadrado {
+        background-color: rgb(247, 22, 221);
+    }
+    h2::before {
+        content: "ROSA";
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1080px) {
+    #quadrado {
+        background-color: rgb(255, 243, 11);
+    }
+    h2::before {
+        content: "AMARELO";
+    }
+}
+
+@media screen and (min-width: 1081px) and (max-width: 1366px) {
+    #quadrado {
+        background-color: rgb(11, 255, 35);
+    }
+    h2::before {
+        content: "VERDE";
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1920px) {
+    #quadrado {
+        background-color: rgb(11, 206, 255);
+    }
+    h2::before {
+        content: "AZUL";
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    #quadrado {
+        background-color: rgb(255, 190, 11);
+    }
+    h2::before {
+        content: "AMARELO";
+    }
+}
