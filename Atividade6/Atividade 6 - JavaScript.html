@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 6 Java Script </title>
+    <script src="Atividade6.js"></script>
+    <link rel="stylesheet" href="Atividade6.css">
+</head>
+
+<body>
+    <div class="box">
+        <div id="media">
+            <h2>Média</h2>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" required size="50" maxlength="50"
+                pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,50}">
+            <br><br>
+            <label for="nota1">Nota 1</label>
+            <input type="number" name="nota1" id="nota1" required size="50" maxlength="50" min="0">
+            <br><br>
+            <label for="nota2">Nota 2</label>
+            <input type="number" name="nota2" id="nota2" required size="50" maxlength="50" min="0">
+            <br><br>
+            <label for="nota3">Nota 3</label>
+            <input type="number" name="nota3" id="nota3" required size="50" maxlength="50" min="0">
+            <input type="submit" value="Calcular" onclick="calcularMedia()">
+        </div>
+
+    </div>
+    <div class="box">
+        <div id="operacoes">
+            <h2>Operações</h2>
+            <label for="num1">Número 1</label>
+            <input type="number" name="numero1" id="numero1" required size="50" maxlength="50"> <br><br>
+
+            <label for="num2">Número 2</label>
+            <input type="number" name="numero2" id="numero2" required size="50" maxlength="50"> <br><br>
+
+            <label for="soma">Soma</label>
+            <input type="number" name="soma" id="soma" required size="50" maxlength="50" readonly>
+            <input type="submit" value="Calcular" onclick="somar()"> <br><br>
+
+            <label for="subtracao">Subtração do primeiro pelo segundo</label>
+            <input type="number" name="subtracao" id="subtracao" required size="50" maxlength="50" readonly>
+            <input type="submit" value="Calcular" onclick="subtrair()"> <br><br>
+
+            <label for="soma">Produto dos dois</label>
+            <input type="number" name="produto" id="produto" required size="50" maxlength="50" readonly>
+            <input type="submit" value="Calcular" onclick="multiplicar()"><br><br>
+
+            <label for="soma">Divisão do primeiro pelo segundo:</label>
+            <input type="number" name="divisao" id="divisao" required size="50" maxlength="50" readonly>
+            <input type="submit" value="Calcular" onclick="dividir()"><br><br>
+
+            <label for="soma">Resto da divisão do primeiro pelo segundo:</label>
+            <input type="number" name="resto" id="resto" required size="50" maxlength="50" readonly>
+            <input type="submit" value="Calcular" onclick="resto()">
+        </div>
+
+    </div>
+
+</body>
+
+</html>
