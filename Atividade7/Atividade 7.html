@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da velha</title>
+    <script src="Atividade7.js"></script>
+    <link rel="stylesheet" href="Atividade7.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo da velha</h1>
+        <h2>Escolha sua opção:</h2>
+        <form id="formJogo">
+            <select name="jogovelha" id="jogovelha">
+                <option value="pedra">Pedra</option>
+                <option value="papel">Papel</option>
+                <option value="tesoura">Tesoura</option>
+            </select>
+            <input type="button" value="Enviar Jogada" onclick="jogar()">
+        </form>
+        <div id="resultado"></div>
+    </div>
+</body>
+</html>
