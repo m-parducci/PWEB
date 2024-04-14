@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa</title>
+    <script src="Atividade8.js"></script>
+    <link rel="stylesheet" href="Atividade8.css">
+
+</head>
+
+<body>
+    <div class="box">
+        <h1>Pesquisa de opinião</h1>
+        <h2>Insira os dados:</h2>
+        <label for="idade">Idade</label>
+        <input type="number" name="idade" id="idade" min="1">
+        <br><br>
+        <label for="sexo">Sexo</label>
+        <div id="container-sexo">
+            <div class="sexo">
+                <input type="radio" name="sexo" id="feminino" value="F">
+                <label>Feminino</label>
+            </div>
+            <div class="sexo">
+                <input type="radio" name="sexo" id="masculino" value="M">
+                <label>Masculino</label>
+            </div>
+            <div class="sexo">
+                <input type="radio" name="sexo" id="outro" value="O">
+                <label>Outro</label>
+            </div>
+        </div>
+        <br><br>
+
+
+        <label for="opiniao">Opinião:</label>
+        <select id="opiniao" name="opiniao">
+            <option value="4">Ótimo</option>
+            <option value="3">Bom</option>
+            <option value="2">Regular</option>
+            <option value="1">Péssimo</option>
+        </select>
+        <br><br>
+        <button onclick="adicionarDados()" id="adicionar">Adicionar</button>
+        <br><br>
+        <button onclick="processarDados()">Enviar</button>
+    </div>
+
+    <div id="resultados" class="box" style="display: none;">
+        <h2>Resultados:</h2>
+        <div id="resultado"></div>
+    </div>
+</body>
+
+</html>
