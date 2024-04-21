@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções JS</title>
+    <script src="Atividade10.js"></script>
+    <link rel="stylesheet" href="Atividade10.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Insira os valores: </h1>
+        <div class="numeros">
+            <h2>Números</h2>
+            <input type="number" name="numero" id="numero1">
+            <input type="number" name="numero" id="numero2">
+            <input type="number" name="numero" id="numero3">
+            <button onclick="calcularMaior()" id="calcularMaior">Maior número</button>
+            <input type="number" name="maior" id="maior" readonly>
+            <br>
+            <button onclick="ordenarCrescente()" id="ordenarCrescente">Ordenar</button>
+            <input type="text" name="crescente" id="crescente" readonly>
+            <br>
+
+        </div>
+        <div class="palindromo">
+            <h2>Informar se é palíndromo</h2>
+            <input type="text" name="palavra" id="palindromo">
+            <span id="respal"></span>
+            <br>
+            <button onclick="verificarPalindromo()" id="verificarPalindromo">Enviar</button>
+            <br>
+
+        </div>
+        <div class="triangulo">
+            <h2>Triângulo</h2>
+            <input type="number" name="numero" id="numtri1">
+            <input type="number" name="numero" id="numtri2">
+            <input type="number" name="numero" id="numtri3">
+            <button onclick="verificarTriangulo()" id="verificarTriangulo">Verificar</button>
+            <br>
+            <p id="restri"></p>
+
+        </div>
+    </div>
+</body>
+
+</html>
