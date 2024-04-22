@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 11</title>
+
+</head>
+
+<body>
+    <script>
+        //maneira 01
+        var funcionario1 = new Object();
+        funcionario1.matricula = "000123";
+        funcionario1.nome = "Leonardo";
+        funcionario1.funcao = "Projetista";
+        alert(`matricula: ${funcionario1.matricula} nome: ${funcionario1.nome} função: ${funcionario1.funcao}`);
+
+        //maneira 02
+
+        function Funcionario(matricula, nome, funcao) {
+            this.matricula = matricula;
+            this.nome = nome;
+            this.funcao = funcao;
+            this.MostraDados = function () {
+                return "matricula: " + this.matricula + " nome: " + this.nome + " função: " +this.funcao;
+            }
+        }
+
+        var funcionario2 = new Funcionario("1123", "Rute", "Desenvolvedora");
+        alert(funcionario2.MostraDados());
+        
+
+        function Funcionario2() {
+            var matricula; 
+            var nome;
+            var funcao;
+            this.setMatricula = function (value) {
+                this.matricula = value;
+            }
+            this.getMatricula = function () {
+                return this.matricula;
+            }
+            this.setNome = function (value) {
+                this.nome = value;
+            }
+            this.getNome = function () {
+                return this.nome;
+            }
+            this.setFuncao = function (value){
+                this.funcao = value;
+            }
+            this.getFuncao = function (){
+                return this.funcao;
+            }
+        }
+
+        var funcionario3 = new Funcionario2();
+        funcionario3.setMatricula("111");
+        funcionario3.setNome("Lucas");
+        funcionario3.setFuncao("Bombeiro");
+
+        alert("matricula: " + funcionario3.getMatricula() + " nome: " + funcionario3.getNome() + " função: " + funcionario3.getFuncao());
+    </script>
+</body>
+
+</html>
