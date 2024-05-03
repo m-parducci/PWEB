@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Janelas</title>
+    <link rel="stylesheet" href="Atividade13.css">
+</head>
+
+<body>
+    <h1 id="status">Abra a janela</h1>
+    
+    <img id="janelaImg" src="janelafechada.png" alt="Abra a janela" onmouseover="abrirJanela()"
+        onmouseout="fecharJanela()" onclick="quebrarJanela()">
+
+    <script>
+        function abrirJanela() {
+            document.getElementById("janelaImg").src = "janelaaberta.png";
+            document.getElementById("status").innerText = "Janela Aberta";
+        }
+
+        function fecharJanela() {
+            document.getElementById("janelaImg").src = "janelafechada.png";
+            document.getElementById("status").innerText = "Abra a janela";
+        }
+
+        function quebrarJanela() {
+            document.getElementById("janelaImg").src = "janelaquebrada.jpg";
+            document.getElementById("status").innerText = "Janela Quebrada";
+        }
+
+
+    </script>
+</body>
+
+</html>
