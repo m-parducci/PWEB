@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Caixa Alta e Baixa</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    #container {
+        text-align: center;
+    }
+
+    #myForm {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+    }
+
+    input[type="text"],
+    input[type="checkbox"],
+    button {
+        margin: 5px;
+    }
+
+    button {
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Controle de Caixa Alta e Baixa</h1>
+
+        <form id="myForm">
+            <label for="inputText">Texto:</label>
+            <input type="text" id="inputText" name="inputText" required>
+            <br>
+
+            <input type="checkbox" id="uppercaseCheckbox" name="uppercaseCheckbox">
+            <label for="uppercaseCheckbox">Maiúsculas</label>
+            <br>
+
+            <input type="checkbox" id="lowercaseCheckbox" name="lowercaseCheckbox">
+            <label for="lowercaseCheckbox">Minúsculas</label>
+            <br>
+
+            <button type="button" onclick="applyTextCase()">Aplicar</button>
+        </form>
+    </div>
+
+    <script>
+        function applyTextCase() {
+            const inputText = document.getElementById('inputText');
+            const uppercaseCheckbox = document.getElementById('uppercaseCheckbox');
+            const lowercaseCheckbox = document.getElementById('lowercaseCheckbox');
+
+            let newText = inputText.value;
+
+            if (uppercaseCheckbox.checked) {
+                newText = newText.toUpperCase();
+            } else if (lowercaseCheckbox.checked) {
+                newText = newText.toLowerCase();
+            }
+
+            inputText.value = newText;
+        }
+    </script>
+</body>
+</html>
