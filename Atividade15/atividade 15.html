@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário Principal</title>
+    <script>
+        function validarFormulario() {
+            var form = document.forms.mainForm;
+            var name = form.elements["name"].value;
+            var email = form.elements["email"].value;
+            var comment = form.elements["comment"].value;
+            var firstVisit = form.elements["first-visit"].value;
+
+            if (name.length < 10) {
+                alert("O nome deve ter pelo menos 10 caracteres.");
+                return false;
+            }
+
+            if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+                alert("O e-mail deve ser válido.");
+                return false;
+            }
+
+            if (comment.length < 20) {
+                alert("O comentário deve ter pelo menos 20 caracteres.");
+                return false;
+            }
+
+            if (!firstVisit) {
+                alert("Selecione se é sua primeira vez nesta página.");
+                return false;
+            }
+
+            if (firstVisit === 'Sim') {
+                alert("Que bom que você voltou a visitar esta página!");
+            } else {
+                alert("Volte sempre a esta página!");
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Formulário Principal</h1>
+
+    <form name="mainForm" onsubmit="return validarFormulario()">
+        <label for="name">Nome:</label>
+        <br>
+        <input type="text" id="name" name="name" required>
+        <br>
+
+        <label for="email">E-mail:</label>
+        <br>
+        <input type="email" id="email" name="email" required>
+        <br>
+
+        <label for="comment">Comentário:</label>
+        <br>
+        <textarea id="comment" name="comment" rows="4" cols="50" required></textarea>
+        <br>
+
+        <h2>Pesquisa:</h2>
+
+        <div class="radio-group">
+            <input type="radio" id="first-visit-yes" name="first-visit" value="Sim" required>
+            <label for="first-visit-yes">Sim</label>
+            <input type="radio" id="first-visit-no" name="first-visit" value="Não" required>
+            <label for="first-visit-no">Não</label>
+        </div>
+        <br>
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpar</button>
+    </form>
+</body>
+
+</html>
