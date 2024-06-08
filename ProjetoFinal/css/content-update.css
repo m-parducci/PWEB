@@ -1,0 +1,167 @@
+.adicionar-content {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+.container-adicionar {
+    background-color: #F5F5F5;
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.new-task-header {
+    text-align: center;
+    padding: 0;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #7765E9;
+    color: #495057;
+}
+
+.new-task-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.new-task-body>div {
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.new-task-body label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.new-task-body input,
+.new-task-body select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.new-task-description {
+    height: 150px;
+}
+
+.new-task-description input {
+    width: 100%;
+    height: 90%;
+}
+
+.new-task-description input[type="text"]::placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+
+}
+
+.new-task-description textarea {
+    width: 100%;
+}
+
+#description::placeholder {
+    font-family: 'Inter', sans-serif;
+    color: #495057;
+    font-size: 16px;
+}
+
+#description {
+    border: none;
+    width: 100%;
+}
+
+.new-task-newdate,
+.new-task-area,
+.new-task-priority {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.new-task-newdate input,
+.new-task-area select,
+.new-task-priority select {
+    flex: 1;
+    max-width: 800px;
+}
+
+.new-task-body input::placeholder {
+    color: #495057;
+    font-size: 16px;
+}
+
+#due-date {
+    color: #495057;
+}
+
+
+.new-task-options {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+.new-task-area,
+.new-task-priority {
+    flex: 1;
+
+}
+
+.new-task-body select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 16px;
+}
+
+.new-task-body option {
+    color: #333;
+}
+
+.container-botoes {
+    display: flex;
+    gap: 15px;
+    width: 80%;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.container-botoes button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    width: 100px;
+}
+
+.container-botoes button:hover {
+    background-color: #5a4cbb;
+}
+
+#btn-adicionar, #btn-editar {
+    background-color: #6ca849;
+}
+
+#btn-cancelar {
+    background-color: #7765E9;;
+}
+

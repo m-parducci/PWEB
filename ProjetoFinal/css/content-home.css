@@ -2,12 +2,12 @@
     font-family: 'Inter', sans-serif;
 }
 
-.container {
+.container-home {
     border-radius: 15px;
     background-color: #e5e5e576;
     padding: 1px;
     margin: 10px;
-    height: 230px;
+    height: 200px;
 }
 
 .col {
@@ -59,15 +59,16 @@
 }
 
 .task-card {
-
     position: relative;
     width: 250px;
     margin: 5px;
-    height: 150px;
+    height: 7rem;
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
+    border:2px solid  #7765E9;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fcfcfcbc;
 }
 
 .task-level {
@@ -92,6 +93,7 @@
     bottom: 5px;
     right: 5px;
     color: #777;
+    font-size: small;
 }
 
 .task-body {
