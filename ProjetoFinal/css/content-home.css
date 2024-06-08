@@ -1,0 +1,99 @@
+.content-home {
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    border-radius: 15px;
+    background-color: #e5e5e576;
+    padding: 1px;
+    margin: 10px;
+    height: 230px;
+}
+
+.col {
+    margin: 10px;
+}
+
+#hoje {
+    width: 15%;
+    order: -1;
+    height: 20px;
+    border-bottom: 2px solid #7765E9;
+}
+
+#a-fazer {
+    width: 15%;
+    order: -1;
+    height: 20px;
+    border-bottom: 2px solid #FBC675;
+}
+
+#feito {
+    width: 15%;
+    order: -1;
+    height: 20px;
+    border-bottom: 2px solid #A3DDB3;
+}
+
+#l1::marker {
+    color: #7765E9;
+}
+
+#l2::marker {
+    color: #FBC675;
+}
+
+#l3::marker {
+    color: #A3DDB3;
+}
+
+#colunas {
+    display: flex;
+    height: 170px;
+}
+
+
+.task-container {
+    display: flex;
+    margin: 10px;
+}
+
+.task-card {
+
+    position: relative;
+    width: 250px;
+    margin: 5px;
+    height: 150px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-level {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: #dee7fcd4;
+    /* Cor de fundo desejada */
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #20223d;
+    margin-bottom: 5px;
+}
+
+.task-header {
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.task-date {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: #777;
+}
+
+.task-body {
+    color: #495057;
+}

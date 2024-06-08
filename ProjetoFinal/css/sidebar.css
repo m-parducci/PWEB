@@ -15,15 +15,15 @@
 }
 
 /*Bar*/
-.sidebar {
+.sidebar-container {
     width: 250px;
-    height: 100vh;
+
     background-color: #f5f5f56f;
     border: 1px solid rgba(221, 215, 215, 0.475);
     border-radius: 10px;
 }
 
-.sidebar a {
+.sidebar-container a {
     color: #787486;
     text-decoration: none;
     padding: 5px;
@@ -31,7 +31,7 @@
     margin-bottom: 10px;
 }
 
-.sidebar a:hover {
+.sidebar-container a:hover {
     border: 0;
     border-radius: 15px;
     background-color: #e3d4ff5d;
