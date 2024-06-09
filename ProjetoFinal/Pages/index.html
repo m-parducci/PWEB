@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de tarefas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/content-home.css">
+    <link rel="stylesheet" href="/css/content-update.css">
+    <link rel="stylesheet" href="/css/content.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="/js/scripts.js" defer></script>
+</head>
+
+<body>
+    <div class="sidebar-container">
+        <div id="logo">
+            <i class="bi bi-person-circle" id="img-logo"></i><span class="ms-1">Tarefas</span>
+        </div>
+        <div class="menu">
+            <a href="#home"> <!-- Usando hash fragment para navegar para a página inicial -->
+                <i class="bi bi-house"></i>Home
+            </a>
+            <a href="#adicionar"> <!-- Usando hash fragment para navegar para a página de adicionar -->
+                <i class="bi bi-plus-circle"></i>Adicionar
+            </a>
+            <a href="#editar"> <!-- Usando hash fragment para navegar para a página de editar -->
+                <i class="bi bi-pencil-square"></i>Editar
+            </a>
+            <a href="#deletar"> <!-- Usando hash fragment para navegar para a página de deletar -->
+                <i class="bi bi-trash3"></i>Deletar
+            </a>
+        </div>
+        <div id="legenda">
+            <h2>Áreas</h2>
+            <ul class="color-list list-unstyled">
+                <li>Pessoal</li>
+                <li>Profissional</li>
+                <li>Treinos</li>
+                <li>Acadêmica</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content" id="content"> <!-- Área para carregar o conteúdo das páginas --></div>
+    <script src="/js/router.js" defer></script> <!-- Carregando o script de roteamento -->
+</body>
+
+</html>

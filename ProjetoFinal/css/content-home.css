@@ -8,6 +8,14 @@
     padding: 1px;
     margin: 10px;
     height: 200px;
+    max-height: 80vh;
+    width: 100%; /* Largura total */
+    max-width: 100%; /* Largura máxima */
+    overflow-x: auto; /* Adiciona barra de rolagem horizontal quando necessário */
+    white-space: nowrap;
+    overflow-y: hidden; /* Esconde a barra de rolagem vertical */
+
+
 }
 
 .col {
@@ -59,14 +67,15 @@
 }
 
 .task-card {
+    flex: 0 0 auto;
     position: relative;
-    width: 250px;
+    width: 200px;
     margin: 5px;
     height: 7rem;
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    border:2px solid  #7765E9;
+    border: 2px solid #7765E9;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     background-color: #fcfcfcbc;
 }
