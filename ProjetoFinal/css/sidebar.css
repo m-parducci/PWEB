@@ -55,6 +55,40 @@
     padding-bottom: 20px;
 }
 
+#btn-deletar, #btn-editar {
+    color: #787486;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+    margin-bottom: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: medium; 
+}
+
+#btn-deletar:hover, #btn-editar:hover {
+    border-radius: 15px;
+    background-color: #e3d4ff5d;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    width: 80%; 
+    padding: 5px; 
+    font-size: medium;
+    margin-left: 15px;        
+}
+
+#btn-deletar i, 
+#btn-deletar span {
+    vertical-align: middle; /* Alinha verticalmente o ícone e o texto */
+}
+
+#btn-deletar:hover i, 
+#btn-deletar:hover span {
+    margin-right: 5px; /* Ajusta o espaçamento entre o ícone e o texto */
+}
+
+
+
 /*-Legendas*/
 #legenda h2 {
     color: #787486;

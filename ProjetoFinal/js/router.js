@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // Função para carregar uma página com base no hash fragment
     function loadPage() {
         var hash = window.location.hash.substr(1); // Obtendo o hash fragment sem o '#'
@@ -6,10 +6,11 @@ $(document).ready(function() {
         $.ajax({
             url: '/pages/' + page + '.html',
             dataType: 'html',
-            success: function(response) {
+            success: function (response) {
                 $('#content').html(response);
-                if (page === 'home') {
+                if (page === 'home' || page === 'editar') {
                     displayTasks(); // Se for a página home, exibe as tarefas
+
                 }
             }
         });

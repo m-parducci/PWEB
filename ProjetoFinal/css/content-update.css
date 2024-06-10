@@ -15,7 +15,8 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.new-task-header {
+.new-task-header,
+.edit-task-header {
     text-align: center;
     padding: 0;
     font-size: 25px;
@@ -25,26 +26,31 @@
     color: #495057;
 }
 
-.new-task-body {
+.new-task-body,
+.edit-task-body {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.new-task-body>div {
+.new-task-body>div,
+.edit-task-body>div {
     background-color: #FFFFFF;
     padding: 10px;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
-.new-task-body label {
+.new-task-body label,
+.edit-task-body label {
     display: block;
     margin-bottom: 5px;
 }
 
 .new-task-body input,
-.new-task-body select {
+.new-task-body select,
+.edit-task-body input,
+.edit-task-body select {
     width: 100%;
     padding: 10px;
     border: none;
@@ -53,11 +59,13 @@
     font-size: 16px;
 }
 
-.new-task-description {
+.new-task-description,
+.edit-task-description {
     height: 150px;
 }
 
-.new-task-description input {
+.new-task-description input,
+.edit-task-description input {
     width: 100%;
     height: 90%;
 }
@@ -70,7 +78,8 @@
 
 }
 
-.new-task-description textarea {
+.new-task-description textarea,
+.edit-task-description textarea {
     width: 100%;
 }
 
@@ -87,7 +96,9 @@
 
 .new-task-newdate,
 .new-task-area,
-.new-task-priority {
+.new-task-priority .edit-task-newdate,
+.edit-task-area,
+.edit-task-priority {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -95,12 +106,16 @@
 
 .new-task-newdate input,
 .new-task-area select,
-.new-task-priority select {
+.new-task-priority select,
+.edit-task-newdate input,
+.edit-task-area select,
+.edit-task-priority select {
     flex: 1;
     max-width: 800px;
 }
 
-.new-task-body input::placeholder {
+.new-task-body input::placeholder,
+.edit-task-body input::placeholder {
     color: #495057;
     font-size: 16px;
 }
@@ -110,7 +125,8 @@
 }
 
 
-.new-task-options {
+.new-task-options,
+.edit-task-options {
     display: flex;
     gap: 10px;
     width: 100%;
@@ -118,12 +134,15 @@
 }
 
 .new-task-area,
-.new-task-priority {
+.new-task-priority,
+.edit-task-area,
+.edit-task-priority {
     flex: 1;
 
 }
 
-.new-task-body select {
+.new-task-body select,
+.edit-task-body select {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -132,7 +151,8 @@
     font-size: 16px;
 }
 
-.new-task-body option {
+.new-task-body option,
+.edit-task-body option {
     color: #333;
 }
 
@@ -157,11 +177,12 @@
     background-color: #5a4cbb;
 }
 
-#btn-adicionar, #btn-editar {
+#btn-adicionar,
+#btn-confirmEditar {
     background-color: #6ca849;
 }
 
 #btn-cancelar {
-    background-color: #7765E9;;
+    background-color: #7765E9;
+    ;
 }
-

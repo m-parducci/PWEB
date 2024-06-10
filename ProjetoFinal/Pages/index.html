@@ -23,18 +23,18 @@
             <i class="bi bi-person-circle" id="img-logo"></i><span class="ms-1">Tarefas</span>
         </div>
         <div class="menu">
-            <a href="#home"> <!-- Usando hash fragment para navegar para a página inicial -->
+            <a href="#home">
                 <i class="bi bi-house"></i>Home
             </a>
-            <a href="#adicionar"> <!-- Usando hash fragment para navegar para a página de adicionar -->
+            <a href="#adicionar">
                 <i class="bi bi-plus-circle"></i>Adicionar
             </a>
-            <a href="#editar"> <!-- Usando hash fragment para navegar para a página de editar -->
+            <a href="#editar">
                 <i class="bi bi-pencil-square"></i>Editar
             </a>
-            <a href="#deletar"> <!-- Usando hash fragment para navegar para a página de deletar -->
+            <button type="button" id="btn-deletar" onclick="removetask()">
                 <i class="bi bi-trash3"></i>Deletar
-            </a>
+            </button>
         </div>
         <div id="legenda">
             <h2>Áreas</h2>
@@ -46,7 +46,8 @@
             </ul>
         </div>
     </div>
-    <div class="content" id="content"> <!-- Área para carregar o conteúdo das páginas --></div>
+    <div class="content" id="content"> 
+        <!-- Área para carregar o conteúdo das páginas --></div>
     <script src="/js/router.js" defer></script> <!-- Carregando o script de roteamento -->
 </body>
 
