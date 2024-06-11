@@ -155,3 +155,20 @@
     cursor: pointer;
 }
 
+
+
+.new-task-done {
+    width: 30%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-size: medium;
+}
+
+.new-task-done label {
+    margin-right: 10px;
+}
+
+#edit-done{
+    width: 30px;
+}
