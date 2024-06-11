@@ -21,9 +21,9 @@ function addTask() {
     };
 
     saveTask(task);
-    window.location.href = 'index.html'; // Redireciona para a página inicial após adicionar a tarefa
+    displayTasks(); // Exibir as tarefas novamente após adicionar uma nova tarefa
+    window.location.href = 'index.html';
 }
-
 // Função para gerar um ID único
 function generateUniqueId() {
     return '_' + Math.random().toString(36).substr(2, 9); // Prefixo "_" adicionado ao ID
@@ -38,15 +38,17 @@ function saveTask(task) {
 
 // Função para exibir tarefas
 function displayTasks() {
-    const today = new Date().toISOString().split('T')[0];
+    const today = new Date().toLocaleDateString('pt-BR').split('/').reverse().join('-');
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     const hojeContainer = document.querySelector('#colunas-hoje .task-container');
     const aFazerContainer = document.querySelector('#colunas-fazer .task-container');
     const feitoContainer = document.querySelector('#colunas-feito .task-container');
- // Codificar tarefas como string JSON
-    const encodedTasks = encodeURIComponent(JSON.stringify(tasks));
 
-
+    // Verifica se os contêineres foram encontrados antes de manipulá-los
+    if (!hojeContainer || !aFazerContainer || !feitoContainer) {
+        console.error('Um ou mais contêineres de tarefas não foram encontrados.');
+        return;
+    }
 
     hojeContainer.innerHTML = '';
     aFazerContainer.innerHTML = '';
@@ -86,9 +88,11 @@ function displayTasks() {
             <div class="task-date"><i class="bi bi-calendar"></i>${task.dueDate}</div>
         `;
 
-        if (task.dueDate === today) {
+        const taskDate = new Date(task.dueDate).toISOString().split('T')[0];
+
+        if (taskDate === today) {
             hojeContainer.appendChild(taskCard);
-        } else if (new Date(task.dueDate) > new Date(today)) {
+        } else if (taskDate > today) {
             aFazerContainer.appendChild(taskCard);
         } else {
             feitoContainer.appendChild(taskCard);
@@ -96,9 +100,11 @@ function displayTasks() {
     });
 
     setupTaskSelection(); // Reaplicando os event listeners de seleção de tarefas ao exibir tarefas
-
-
 }
+
+// Chamar essa função ao carregar a página
+document.addEventListener('DOMContentLoaded', displayTasks);
+
 
 // Função para obter a cor de fundo com base no valor da prioridade
 function getPriorityColor(priority) {
@@ -147,6 +153,16 @@ function highlightTasks() {
         card.classList.toggle('highlight');
     });
 }
+
+// Função para adicionar estilo de destaque às tarefas
+function highlightEditableTasks() {
+    const taskCards = document.querySelectorAll('.task-card');
+    taskCards.forEach(card => {
+        card.classList.toggle('highlightEditable');
+    });
+}
+
+
 
 let deleteEnabled = false; // Inicialmente, a função de deletar está desabilitada
 
@@ -198,23 +214,18 @@ function removetask() {
     }
 }
 
-// Função para remover a tarefa do localStorage
-function removeTaskFromLocalStorage(taskId) {
-    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    tasks = tasks.filter(task => task.id !== taskId);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-}
-
-
-// Exibe as tarefas ao carregar a página
-document.addEventListener('DOMContentLoaded', displayTasks);
 
 // Adiciona estilos de destaque no CSS
 const style = document.createElement('style');
 style.innerHTML = `
     .task-card.highlight {
-        border: 2px dotted ;
+        border: 2px dotted #ff0000;
         background-color: #FFE6F087;
+    }
+    .task-card.highlightEditable {
+        border: 2px dashed #0400FF;
+        background-color: #DADBDBB0;
+       
     }
 `;
 document.head.appendChild(style);
@@ -233,4 +244,104 @@ function setupTaskSelection() {
 document.addEventListener('DOMContentLoaded', displayTasks);
 
 
-// --EDITAR-- //
+// EDITAR // 
+
+let editEnabled = false;
+
+// Função para editar tarefas
+function editTask() {
+    // Verifica se a função de editar está habilitada
+    if (!editEnabled) {
+        // Ativa a função de editar
+        editEnabled = true;
+        highlightEditableTasks(); // Adiciona a classe de destaque tracejada
+        // Adiciona um ouvinte de evento de clique a cada card
+        const taskCards = document.querySelectorAll('.task-card');
+        taskCards.forEach(card => {
+            card.addEventListener('click', taskEditClickListener);
+        });
+    } else {
+        // Desativa a função de editar no segundo clique
+        editEnabled = false;
+        highlightEditableTasks(); // Remove a classe de destaque tracejada
+        removeTaskClickListener(); // Remove os listeners de clique dos cards
+    }
+}
+
+// Função para tratar o clique em uma tarefa durante a edição
+function taskEditClickListener(event) {
+    openEditModal(this.id);
+}
+
+// Função para remover os listeners de clique das tarefas
+function removeTaskClickListener() {
+    const taskCards = document.querySelectorAll('.task-card');
+    taskCards.forEach(card => {
+        card.removeEventListener('click', taskEditClickListener);
+    });
+}
+
+// Função para abrir o modal de edição com as informações da tarefa selecionada
+function openEditModal(taskId) {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const task = tasks.find(t => t.id === taskId);
+
+    if (task) {
+        document.getElementById('edit-title').value = task.title;
+        document.getElementById('edit-description').value = task.description;
+        document.getElementById('edit-due-date').value = task.dueDate;
+        document.getElementById('edit-area').value = task.area;
+        document.getElementById('edit-priority').value = task.priority;
+
+        const editModal = document.getElementById('editTaskModal');
+        editModal.setAttribute('data-task-id', taskId); // Define o ID da tarefa como um atributo do modal
+        editModal.style.display = 'block';
+    }
+}
+
+// Função para fechar o modal de edição
+function closeEditModal() {
+    const editModal = document.getElementById('editTaskModal');
+    editModal.style.display = 'none';
+}
+
+// Função para salvar a tarefa editada
+function saveEditedTask() {
+    const taskId = document.getElementById('editTaskModal').getAttribute('data-task-id');
+    const title = document.getElementById('edit-title').value;
+    const description = document.getElementById('edit-description').value;
+    const dueDate = document.getElementById('edit-due-date').value;
+    const area = document.getElementById('edit-area').value;
+    const priority = document.getElementById('edit-priority').value;
+
+    if (!title || !description || !dueDate || !area || !priority) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+    }
+
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const taskIndex = tasks.findIndex(task => task.id === taskId);
+
+    if (taskIndex !== -1) {
+        tasks[taskIndex] = {
+            id: taskId,
+            title,
+            description,
+            dueDate,
+            area,
+            priority
+        };
+
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        displayTasks();
+        closeEditModal();
+        editEnabled = false;
+        removeTaskClickListener();
+        
+    } else {
+        alert('Tarefa não encontrada.');
+    }
+}
+
+// Exibe as tarefas ao carregar a página
+document.addEventListener('DOMContentLoaded', displayTasks);

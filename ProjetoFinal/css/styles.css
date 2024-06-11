@@ -1,7 +1,13 @@
 /*--BODY--*/
 body {
     display: flex;
-    margin: 0px;
-    
+    margin: 0px;    
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

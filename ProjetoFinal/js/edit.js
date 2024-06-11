@@ -57,5 +57,3 @@ function displayTasksOnEditPage() {
 
 // Exibe as tarefas ao carregar a página de edição
 document.addEventListener('DOMContentLoaded', displayTasksOnEditPage);
-
-

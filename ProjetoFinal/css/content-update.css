@@ -96,7 +96,8 @@
 
 .new-task-newdate,
 .new-task-area,
-.new-task-priority .edit-task-newdate,
+.new-task-priority,
+.edit-task-newdate,
 .edit-task-area,
 .edit-task-priority {
     display: flex;
@@ -178,7 +179,8 @@
 }
 
 #btn-adicionar,
-#btn-confirmEditar {
+#btn-confirmEditar,
+#btn-salvar {
     background-color: #6ca849;
 }
 

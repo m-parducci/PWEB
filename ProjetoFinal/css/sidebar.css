@@ -10,7 +10,7 @@
     color: #787486;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    font-size: x-large;
+    font-size: large;
     border-bottom: 2px solid #dfdddd;
 }
 
@@ -21,7 +21,7 @@
     background-color: #f5f5f56f;
     border: 1px solid rgba(221, 215, 215, 0.475);
     border-radius: 10px;
-    flex-shrink: 0
+    flex-shrink: 0;
 }
 
 .sidebar-container a {
@@ -30,6 +30,7 @@
     padding: 5px;
     display: block;
     margin-bottom: 10px;
+ 
 }
 
 .sidebar-container a:hover {
@@ -37,7 +38,7 @@
     border-radius: 15px;
     background-color: #e3d4ff5d;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-    width: 80%;
+    width: 90%;
     margin-left: 10px;
 }
 
@@ -53,9 +54,11 @@
     margin-top: 10px;
     border-bottom: 2px solid #dfdddd;
     padding-bottom: 20px;
+    font-size: 0.9rem;
 }
 
-#btn-deletar, #btn-editar {
+#btn-deletar,
+#btn-editar {
     color: #787486;
     text-decoration: none;
     padding: 5px;
@@ -64,33 +67,35 @@
     border: none;
     background: none;
     cursor: pointer;
-    font-size: medium; 
+    font-size: 0.9rem;
 }
 
-#btn-deletar:hover, #btn-editar:hover {
+#btn-deletar:hover,
+#btn-editar:hover {
     border-radius: 15px;
     background-color: #e3d4ff5d;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-    width: 80%; 
-    padding: 5px; 
-    font-size: medium;
-    margin-left: 15px;        
+    width: 80%;
+    padding: 5px;
+    font-size: 0.9rem;
+    margin-left: 15px;
 }
 
-#btn-deletar i, 
+#btn-deletar i,
 #btn-deletar span {
-    vertical-align: middle; /* Alinha verticalmente o ícone e o texto */
+    vertical-align: middle;
+    /* Alinha verticalmente o ícone e o texto */
 }
 
-#btn-deletar:hover i, 
+#btn-deletar:hover i,
 #btn-deletar:hover span {
-    margin-right: 5px; /* Ajusta o espaçamento entre o ícone e o texto */
+    margin-right: 5px;
+    /* Ajusta o espaçamento entre o ícone e o texto */
 }
-
-
 
 /*-Legendas*/
 #legenda h2 {
+    margin-top: 10px;
     color: #787486;
     font-family: 'Inter', sans-serif;
     margin-left: 20px;
@@ -102,24 +107,40 @@
     font-family: 'Inter', sans-serif;
     color: #787486;
     line-height: 35px;
+    list-style: none;
+    /* Remove os marcadores padrão da lista */
+    padding-left: 0;
+    /* Remove o padding padrão da lista */
 }
 
-.color-list li::marker {
+.color-list li {
+    margin-left: 10px;
+    position: relative;
+    padding-left: 25px;
+    /* Espaço para os novos marcadores */
+}
+
+.color-list li::before {
+    content: '\2022';
+    /* Unicode para o marcador */
+    position: absolute;
+    left: 0;
     font-size: 20px;
+    line-height: 35px;
 }
 
-.color-list li:nth-child(1)::marker {
+.color-list li:nth-child(1)::before {
     color: #ff3a3aba;
 }
 
-.color-list li:nth-child(2)::marker {
+.color-list li:nth-child(2)::before {
     color: #867cf8;
 }
 
-.color-list li:nth-child(3)::marker {
+.color-list li:nth-child(3)::before {
     color: #FECA15;
 }
 
-.color-list li:nth-child(4)::marker {
+.color-list li:nth-child(4)::before {
     color: #7BC6D7;
 }
